@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<span th:text="${session.userLogged?.name}"></span>
+
+<span><a th:href="@{/log-out}">Logout</a></span>
+
+</body>
+</html>

@@ -1,0 +1,83 @@
+/* Login and Register */
+/* head form */
+.heading-form {
+    background-color: #f5f5f5;
+    margin: 10% auto 0px auto;
+    padding: 12px;
+    border: 1px solid #ccc;
+    width: 400px !important;
+    border-radius: 1px;
+}
+/* body form */
+.login-form {
+    margin: 0px auto 30px auto;
+    padding: 18px 12px 12px 12px;
+    border: 1px solid #ccc;
+    width: 400px !important;
+    border-radius: 1px;
+
+}
+
+/* btn */
+
+.btn-success {
+    height: 60px;
+    color: #f4f4f4 !important;
+}
+
+.btn-login {
+    color: #f4f4f4 !important;
+}
+
+.btn-submit {
+    width: 105.81818200000001px;
+    height: 43.818182px;
+
+}
+
+.btn-reset {
+    width: 105.81818200000001px;
+    height: 43.818182px;
+}
+
+a {
+    text-decoration: none !important;
+
+}
+
+/* Edit Profile */
+/* header profile */
+.navbar {
+    background-color: #f8f8f8;
+    border-bottom: 2px solid #f4f4f4;
+}
+/* content left */
+.content-left {
+    padding-top: 8px;
+    background-color: #f8f8f8 !important;
+}
+
+.sidebar-left {
+    height: 1500px;
+
+}
+
+.last-item-sidebar {
+
+    border-bottom-width: 1px;
+
+}
+
+/* content right */
+
+.content-right {
+    padding: 3%;
+}
+
+.title-content {
+    font-size: xx-large;
+}
+
+.table-children {
+    padding: 16px !important;
+}

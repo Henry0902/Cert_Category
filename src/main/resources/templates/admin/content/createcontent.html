@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=\, initial-scale=1.0">
+    <title>Add Content</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+    <script src="https://unpkg.com/ionicons@5.0.0/dist/ionicons.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="./font/fontawesome-free-6.4.0/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+</head>
+<body>
+<!-- Header profile -->
+<div>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">CMS</a>
+            <div class="" id="navbarNavDropdown">
+                <ul class="navbar-nav justify-content-between">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <ion-icon name="person-circle-outline"></ion-icon>
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end">
+                            <li><a class="dropdown-item" th:href="@{'/admin/member/userprofile/'}">
+                                <!-- <i class="fa-solid fa-user"></i> -->
+                                <ion-icon name="person-circle-outline"></ion-icon>
+                                User Profile
+                            </a></li>
+                            <hr>
+                            <li><a class="dropdown-item" th:href="@{/log-out}">
+                                <!-- <i class="fa-solid fa-right-from-bracket"></i> -->
+                                <ion-icon name="log-out-outline"></ion-icon>
+                                Logout
+                            </a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</div>
+<!-- content profile -->
+<div class="d-flex">
+    <!-- content-left -->
+    <nav class="bg-body-tertiary content-left sidebar-left">
+        <div class="d-flex flex-column mb-3">
+
+            <div class="border-end bg-white" id="sidebar-wrapper">
+
+                <div class="list-group list-group-flush">
+                    <a class="list-group-item list-group-item-action list-group-item-light p-3" href="#!">
+                        <form class="d-flex" role="search">
+                            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                            <button class="btn btn-outline-success" type="submit">
+                                <!-- <i class="fa-solid fa-magnifying-glass"></i> -->
+                                <ion-icon name="search-outline"></ion-icon>
+                            </button>
+                        </form>
+                    </a>
+                    <a class="list-group-item list-group-item-action list-group-item-light p-3" th:href="@{/admin/content/viewcontent}">
+                        <div class="p-2 item-sidebar">
+                            <div>
+                                <ion-icon name="newspaper-outline"></ion-icon>
+                                <!-- <i class="fa-solid fa-table"></i> -->
+                                View content
+                            </div>
+                        </div>
+                    </a>
+                    <a class="list-group-item list-group-item-action list-group-item-light p-3 last-item-sidebar" th:href="@{/admin/content/createcontent}">
+                        <div class="p-2 item-sidebar ">
+                            <div>
+                                <!-- <i class="fa-solid fa-pen-to-square"></i> -->
+                                <ion-icon name="book-outline"></ion-icon>
+                                Form content
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <!-- content-right -->
+    <div class="container content-right">
+        <div class="title-content">
+            <p>Add Content</p>
+        </div>
+        <hr>
+        <table class="table table-bordered">
+            <thead class="table-light">
+            <tr>
+                <td>Content Form Elements</td>
+            </tr>
+
+            </thead>
+            <tbody>
+            <tr>
+                <td class="table-children">
+                    <form th:action="@{/admin/content/createcontent}" method="post" th:object="${content}" onsubmit="return addContentOnSubmit()">
+                        <div th:text="${msg}"></div>
+                        <div class="mb-3 col-sm-8">
+                            <label class="form-label">Title</label>
+                            <input  class="form-control" name="title" id="titleInput" placeholder="Enter the title" size="50" minlength="100" maxlength="200" onchange="checkTitle(this.value)" required>
+
+                        </div>
+                        <div class="mb-3 col-sm-8">
+                            <label  class="form-label">Brief</label>
+                            <textarea class="form-control" name="brief" id="briefInput" rows="3" minlength="30" maxlength="150" onchange="checkBrief(this.value)" required></textarea>
+                        </div>
+                        <div class="mb-3 col-sm-8">
+                            <label class="form-label">Content</label>
+                            <textarea class="form-control" name="content" id="contentInput" rows="3" minlength="50" maxlength="1000" onchange="checkContent(this.value)" required></textarea>
+                        </div>
+                        <input class="btn btn-success btn-submit" type="submit" value="Submit"></button>
+                        <input class="btn btn-success btn-reset" type="reset" value="Reset"></button>
+                    </form>
+
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+<script th:src="@{/js/javascrip.js}"></script>
+</body>
+</html>
